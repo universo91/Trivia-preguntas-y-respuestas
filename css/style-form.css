@@ -1,0 +1,36 @@
+
+#form-questions-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+small {
+    /*background-color: rgb(9, 2, 32);*/
+    border-radius: 10px;
+    background-color: rgb(161, 4, 114);
+    color: rgb(255, 255, 255);  
+    padding: 0 10px;
+}
+
+ul li {
+    list-style: none;
+    margin-left: 10px;
+   
+}
+ul li span {
+    color: rgb(161, 4, 114);
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+ul p {
+    color:rgb(59, 59, 59);
+    margin-bottom: 0;
+}
+
+#body-response h2 {
+    text-align: center;
+    background-color: rgb(7, 189, 83);
+    color: white;
+    border-radius: 1.2rem;
+}
