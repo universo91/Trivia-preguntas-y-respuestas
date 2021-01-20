@@ -2,6 +2,7 @@ import UI from "./UI.js";
 
 let arrayResponsesSent = [];
 let arrayAnswersC = [];
+let cont = 0;
 
 export default class Answers {
         
@@ -10,7 +11,8 @@ export default class Answers {
         let radios = document.getElementsByClassName("radios");  
         arrayAnswersC = [];       
         for( let i = 0 ; i < radios.length ; i++){
-            if( radios[i].checked ){                
+            if( radios[i].checked ){   
+                cont++;             
                 arrayAnswersC.push( radios[i].value );
             }
         }        
@@ -24,14 +26,24 @@ export default class Answers {
                 scoree++;
             }
             else{
-                msj += `<ul> <p> ${totalPreguntas[i]}</p>
-                                <li> <span>Rpta correcta :</span> <small>${ correctAnswers[i]  }</small> </li>
-                            </ul> `;                             
+                msj += `<ul> 
+                            <p> ${totalPreguntas[i]}</p>
+                            <li> <span>Rpta correcta :</span> <small>${ correctAnswers[i]  }</small> </li>
+                        </ul> `;                             
                 }
         }
+        console.log( arrayAnswersC ); 
         msj = `<h2> SU PUNTAJE ES: ${scoree} </h2> ${msj}`; 
         const containerResponse = document.getElementById("body-response"); 
-        containerResponse.innerHTML = msj;         
+        containerResponse.innerHTML = ""; 
+        containerResponse.innerHTML = msj; 
+
+     
+        
+                
     }
 
+    static getContador() {
+        return cont;
+    }
 }

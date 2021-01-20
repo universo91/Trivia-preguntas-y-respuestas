@@ -4,9 +4,9 @@ import Answers from "./Answers.js"
 
 const formFilter = document.getElementById("form-questions-filter");
 const formAnswers = document.getElementById("form-questions-container");
-const btn = document.getElementById("btn-send-answers");
+const form = document.getElementById("form");
 
-formFilter.addEventListener("submit",(event)=>{
+formFilter.addEventListener("submit",(event) => {
     event.preventDefault();
     // alert("detenemos el envio");
     Request.getQuestions()
@@ -20,11 +20,18 @@ formFilter.addEventListener("submit",(event)=>{
 
 Request.getCategories()
     .then(response => response.json())
-    .then(data => UI.printCategories(data.trivia_categories))
+    .then(data => UI.printCategories(data.trivia_categories));
 
-formAnswers.addEventListener("submit",(event)=>{
+form.addEventListener("submit",(event) => {
     event.preventDefault();
-    // alert("detenemos el envio de las respuestas...");
-    Answers.getSelectedAnswers();
-})
+    // alert("detenemos el envio de las respuestas...");    
+    /*const totalCheckedRadio = Answers.getContador();
+    if( totalCheckedRadio != UI.getArrayAnswersCorrect().length ){
+        $('#exampleModal').modal('hide');
+    }
+    else {*/
+        Answers.getSelectedAnswers();
+        $('#exampleModal').modal('show')
+    //}
+});
 

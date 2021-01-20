@@ -1,7 +1,20 @@
 
+body {
+    /*background: linear-gradient(to bottom, #e6b71e, #be2994 100%);*/
+    background: linear-gradient(to top , #e6b71e, #be2994 100%);
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.options{
+    background-image: linear-gradient(to top, #e6b71e, #be2994 100%);
+}
 #form-questions-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
+}
+#btn-results {
+    margin-bottom: 5rem;
 }
 
 small {

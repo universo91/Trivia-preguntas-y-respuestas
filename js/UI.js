@@ -44,10 +44,11 @@ export default class UI {
                                                 ${answerBody}
                                             </div>
                                         </div>
-                                    </div>`
+                                    </div>`; 
         });
-        container.innerHTML += `<div class="row " id="btn-send-answers">
-                                    <button type="submit" class="btn btn-primary mt-5" data-toggle="modal" data-target="#exampleModal"> Enviar respuestas </button>
+        const btnResults = document.getElementById("btn-results");
+        btnResults.innerHTML = `<div class="row " id="btn-send-answers">
+                                    <button type="submit" class="btn btn-primary mt-5" > Enviar respuestas </button>
                                 </div>`;
         // containerBtn.innerHTML = ` <!-- <input type="submit" value="Enviar respuestas" class="btn btn-primary mt-5" id="btn-send-answers">`;
     }
